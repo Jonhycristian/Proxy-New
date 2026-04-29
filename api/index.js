@@ -1,7 +1,6 @@
 export const config = { runtime: "edge" };
 
-// Aqui está o seu domínio da NewPlay com HTTPS
-const TARGET_BASE = ("https://ssh.newplayplus.com.br:443").replace(/\/$/, "");
+const TARGET_BASE = (process.env.TARGET_DOMAIN || "").replace(/\/$/, "");
 
 const STRIP_HEADERS = new Set([
   "host",
