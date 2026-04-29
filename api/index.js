@@ -1,7 +1,7 @@
 export const config = { runtime: "edge" };
 
-// Colocamos o seu link seguro da Cloudflare fixo no código!
-const TARGET_BASE = ("https://sshl.newplayplus.com.br").replace(/\/$/, "");
+// Usando HTTP puro e IP direto para driblar o bloqueio de SSL e da Cloudflare
+const TARGET_BASE = "http://157.254.54.96:8443";
 
 const STRIP_HEADERS = new Set([
   "host",
@@ -31,6 +31,7 @@ export default async function handler(req) {
 
     const out = new Headers();
     let clientIp = null;
+    
     for (const [k, v] of req.headers) {
       if (STRIP_HEADERS.has(k)) continue;
       if (k.startsWith("x-vercel-")) continue;
