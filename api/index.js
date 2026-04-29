@@ -1,6 +1,7 @@
 export const config = { runtime: "edge" };
 
-const TARGET_BASE = (process.env.TARGET_DOMAIN || "").replace(/\/$/, "");
+// Colocamos o seu link seguro da Cloudflare fixo no código!
+const TARGET_BASE = ("https://sshl.newplayplus.com.br").replace(/\/$/, "");
 
 const STRIP_HEADERS = new Set([
   "host",
