@@ -1,8 +1,7 @@
 export const config = { runtime: "edge" };
 
-// AQUI ESTÁ A MUDANÇA: Substituímos a variável de ambiente pelo seu IP direto.
-// Se a sua VPS tiver certificado SSL respondendo no IP, troque "http://" por "https://"
-const TARGET_BASE = ("http://157.254.54.96:443").replace(/\/$/, "");
+// Aqui está o seu domínio da NewPlay com HTTPS
+const TARGET_BASE = ("https://ssh.newplayplus.com.br:443").replace(/\/$/, "");
 
 const STRIP_HEADERS = new Set([
   "host",
