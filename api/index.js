@@ -1,6 +1,6 @@
 export const config = { runtime: "edge" };
 
-// Substitua o 8080 pela porta exata que você deixou limpa (sem TLS) na sua VPS
+// Alvo fixado no IP da sua VPS na porta 8443 sem SSL
 const TARGET_BASE = "http://157.254.54.96:8443";
 
 const STRIP_HEADERS = new Set([
