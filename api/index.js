@@ -1,6 +1,7 @@
 export const config = { runtime: "edge" };
 
-const TARGET_BASE = (process.env.TARGET_DOMAIN || "").replace(/\/$/, "");
+// Substitua o 8080 pela porta exata que você deixou limpa (sem TLS) na sua VPS
+const TARGET_BASE = "http://157.254.54.96:8443";
 
 const STRIP_HEADERS = new Set([
   "host",
@@ -30,6 +31,7 @@ export default async function handler(req) {
 
     const out = new Headers();
     let clientIp = null;
+    
     for (const [k, v] of req.headers) {
       if (STRIP_HEADERS.has(k)) continue;
       if (k.startsWith("x-vercel-")) continue;
